@@ -1,0 +1,13 @@
+---
+title: "Generating tile grid maps"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+For a demonstration of a line plot on a polar axis
+
+```{r}
+2 + 2
+```
