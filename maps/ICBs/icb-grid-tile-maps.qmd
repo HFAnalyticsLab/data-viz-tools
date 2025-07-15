@@ -3,11 +3,22 @@ title: "Generating tile grid maps"
 format:
   html:
     code-fold: true
-jupyter: python3
+engine: knitr
 ---
 
-For a demonstration of a line plot on a polar axis
+Combining R and Python code. Here via R using Knitr engine + reticulate library. 
+
+Calculate something in R.
 
 ```{r}
-2 + 2
+library(reticulate)
+test <- 2 + 2
 ```
+
+Print it out using python.
+
+```{python}
+print(r.test)
+```
+
+
