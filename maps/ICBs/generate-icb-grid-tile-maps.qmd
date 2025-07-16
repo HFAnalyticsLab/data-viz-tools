@@ -1,0 +1,24 @@
+---
+title: "Generating tile grid maps"
+format:
+  html:
+    code-fold: true
+engine: knitr
+---
+
+Combining R and Python code. Here via R using Knitr engine + reticulate library. 
+
+Calculate something in R.
+
+```{r}
+library(reticulate)
+test <- 2 + 2
+```
+
+Print it out using python.
+
+```{python}
+print(r.test)
+```
+
+

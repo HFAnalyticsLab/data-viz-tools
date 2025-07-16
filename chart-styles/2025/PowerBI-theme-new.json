@@ -1,0 +1,132 @@
+
+{
+    
+	"name": "HF-PowerBI-theme-2025",
+    "dataColors": ["#eb003b", "#189edc", "#7b1fa2", "#ff9800", "#009687", "#0b2660", "#ff8288", "#11609c"],
+    "firstLevelElements": "#252423",
+    "secondLevelElements": "#605E5C",
+    "thirdLevelElements": "#F3F2F1",
+    "fourthLevelElements": "#B3B0AD",
+    "background": "#FFFFFF",
+    "secondaryBackground": "#C8C6C4",
+    "tableAccent": "#118DFF",
+    "good": "#189edc",
+    "neutral": "#a9a9a9",
+    "bad": "#eb003b",
+    "maximum": "#b40018",
+    "center": "#fd475c",
+    "minimum": "#ffafb0",
+    "null": "#FF7F48",
+    "textClasses": {
+        "callout": {
+            "fontSize": 40,
+            "fontFace": "Arial",
+            "color": "#252423"
+        },
+        "title": {
+            "fontSize": 24,
+            "fontFace": "Arial",
+            "color": "#252423"
+        },
+        "header": {
+            "fontSize": 12,
+            "fontFace": "Arial",
+            "color": "#252423"
+        },
+        "label": {
+            "fontSize": 10,
+            "fontFace": "Arial",
+            "color": "#252423"
+        }
+    },
+	"visualStyles": {
+        "*": {
+            "*": {
+                "general": [{
+					"keepLayerOrder": true
+				}],
+                "legend": [{
+					"show": true,
+					"position": "Top",
+					"showTitle": true,
+					"titleText": "",
+					"labelColor": { "solid": { "color": "#222222"}},
+					"fontFamily": "Arial",
+					"fontSize": 10,
+					"legendMarkerRendering": "markerOnly",
+					"matchLineColor": false,
+					"defaultToCircle": false
+				}],
+                "title": [{
+                    "show": true,
+                    "fontColor": { "solid": { "color": "#222222" } },
+                    "background": { "solid": { "color": "#ffffff" } },
+                    "alignment": "left",
+                    "bold": true,
+                    "fontSize": 12,
+                    "fontFamily": "Arial"
+                }],
+                "background": [{
+                    "show": true,
+                    "color": { "solid": { "color": "#ffffff" } },
+                    "transparency": 0
+                }],
+                "lockAspect": [{
+                    "show": true
+                }],
+                "border": [{
+                    "show": false,
+                    "radius": 0
+                }],
+                "visualTooltip": [{
+                    "type": "Default"
+                }],
+                "visualHeader": [{
+					"show": false,
+                    "foreground": { "solid": { "color": "#ffffff" } },
+                    "border": { "solid": { "color": "#ffffff" } },
+					"background": { "solid": { "color": "#ffffff"}},
+					"transparency": false,
+					"showVisualInformationButton": false,
+					"showVisualWarningButton": false,
+					"showVisualErrorButton": false,
+					"showDrillRoleSelector": false,
+					"showDrillUpButton": false,
+					"showDrillToggleButton": false,
+					"showDrillDownLevelButton": false,
+					"showDrillDownExpandButton": false,
+					"showPinButton": false,
+					"showFocusModeButton": false,
+					"showFilterRestatementButton": false,
+					"showSeeDataLayoutToggleButton": false,
+					"showOptionsMenu": false,
+					"showTooltipButton": false
+				}],
+                "visualHeaderTooltip": [{
+                    "text": "Header tooltip text",
+                    "titleFontColor": { "solid": { "color": "#222222" } },
+                    "transparency": 0,
+                    "background": { "solid": { "color": "#ffffff" } }
+                }]
+            }
+        },
+        "barChart": {
+			"*": {
+                "categoryAxis": [{
+					"show": true,
+					"position": "Right",
+					"labelColor": { "solid": { "color": "#4c4c4c"}},
+					"fontSize": 10,
+					"fontFamily": "Arial",
+                    "showAxisTitle": false
+                    }],
+                "valueAxis": [{
+					"show": true,
+					"labelColor": { "solid": { "color": "#4c4c4c"}},
+					"fontSize": 10,
+					"fontFamily": "Arial",
+					"showAxisTitle": false
+                 }]
+        }}
+    }
+}
