@@ -1,0 +1,55 @@
+---
+title: "R and Python love story in Quarto"
+format:
+  html:
+    code-fold: false
+    self-contained: true
+    theme: cosmo
+engine: knitr
+---
+
+Combining R and Python code. Here via R using Knitr engine + reticulate library. 
+
+## Setup
+
+```{r}
+library(readr)
+library(reticulate)
+reticulate::conda_list()
+
+#use_python("C:/Users/Lisa.Hornung/AppData/Local/miniconda3/envs/310_data_viz/")
+use_condaenv("310_data_viz")
+```
+
+## Load some data in R
+
+```{r}
+#R code
+penguins <- read_csv("penguins.csv")
+```
+
+## Convert data to pandas dataframe
+
+```{r}
+py_penguins <- r_to_py(penguins)
+```
+
+## Add column in python
+
+```{python}
+#Python code
+import pandas as pd
+r.py_penguins["test_column"] = "test"
+```
+
+## Print new frame in R
+
+```{r}
+py_penguins
+```
+
+
+```{r}
+r_penguins = py_to_r(py_penguins)
+r_penguins
+```
