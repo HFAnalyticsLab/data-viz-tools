@@ -3,40 +3,33 @@
     
 	"name": "HF-PowerBI-theme-2025",
     "dataColors": ["#eb003b", "#189edc", "#7b1fa2", "#ff9800", "#009687", "#0b2660", "#ff8288", "#11609c"],
-    "firstLevelElements": "#252423",
-    "secondLevelElements": "#605E5C",
-    "thirdLevelElements": "#F3F2F1",
-    "fourthLevelElements": "#B3B0AD",
-    "background": "#FFFFFF",
-    "secondaryBackground": "#C8C6C4",
-    "tableAccent": "#118DFF",
     "good": "#189edc",
     "neutral": "#a9a9a9",
     "bad": "#eb003b",
     "maximum": "#b40018",
     "center": "#fd475c",
     "minimum": "#ffafb0",
-    "null": "#FF7F48",
+    "null": "#e5e5e5",
     "textClasses": {
         "callout": {
             "fontSize": 40,
             "fontFace": "Arial",
-            "color": "#252423"
+            "color": "#222222"
         },
         "title": {
             "fontSize": 24,
             "fontFace": "Arial",
-            "color": "#252423"
+            "color": "#222222"
         },
         "header": {
             "fontSize": 12,
             "fontFace": "Arial",
-            "color": "#252423"
+            "color": "#222222"
         },
         "label": {
             "fontSize": 10,
             "fontFace": "Arial",
-            "color": "#252423"
+            "color": "#222222"
         }
     },
 	"visualStyles": {
