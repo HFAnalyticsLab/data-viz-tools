@@ -2199,15 +2199,9 @@ vertical-align: -.125em;
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package &#39;readr&#39; was built under R version 4.4.3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package &#39;reticulate&#39; was built under R version 4.4.3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">conda_list</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">conda_list</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          name
 1         base
@@ -2216,756 +2210,77 @@ vertical-align: -.125em;
 1                     C:\\Users\\Lisa.Hornung\\AppData\\Local\\miniconda3/python.exe
 2 C:\\Users\\Lisa.Hornung\\AppData\\Local\\miniconda3\\envs\\310_data_viz/python.exe</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#use_python(&quot;C:/Users/Lisa.Hornung/AppData/Local/miniconda3/envs/310_data_viz/&quot;)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use_condaenv</span>(<span class="st">&quot;310_data_viz&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#use_python(&quot;C:/Users/Lisa.Hornung/AppData/Local/miniconda3/envs/310_data_viz/&quot;)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use_condaenv</span>(<span class="st">&quot;310_data_viz&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="load-some-data-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="load-some-data-in-r">Load some data in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#R code</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;penguins.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 344 Columns: 9
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: &quot;,&quot;
-chr (3): species, island, sex
-dbl (6): rowid, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#R code</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;penguins_short.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="convert-data-to-pandas-dataframe" class="level2">
 <h2 class="anchored" data-anchor-id="convert-data-to-pandas-dataframe">Convert data to pandas dataframe</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>py_penguins <span class="ot">&lt;-</span> <span class="fu">r_to_py</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>py_penguins <span class="ot">&lt;-</span> <span class="fu">r_to_py</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="add-column-in-python" class="level2">
 <h2 class="anchored" data-anchor-id="add-column-in-python">Add column in python</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Python code</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>r.py_penguins[<span class="st">&quot;test_column&quot;</span>] <span class="op">=</span> <span class="st">&quot;test&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Python code</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>r.py_penguins[<span class="st">&quot;test_column&quot;</span>] <span class="op">=</span> <span class="st">&quot;test&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="print-new-frame-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="print-new-frame-in-r">Print new frame in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>py_penguins</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>py_penguins</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     rowid    species     island  ...     sex    year  test_column
-0      1.0     Adelie  Torgersen  ...    male  2007.0         test
-1      2.0     Adelie  Torgersen  ...  female  2007.0         test
-2      3.0     Adelie  Torgersen  ...  female  2007.0         test
-3      4.0     Adelie  Torgersen  ...    None  2007.0         test
-4      5.0     Adelie  Torgersen  ...  female  2007.0         test
-..     ...        ...        ...  ...     ...     ...          ...
-339  340.0  Chinstrap      Dream  ...    male  2009.0         test
-340  341.0  Chinstrap      Dream  ...  female  2009.0         test
-341  342.0  Chinstrap      Dream  ...    male  2009.0         test
-342  343.0  Chinstrap      Dream  ...    male  2009.0         test
-343  344.0  Chinstrap      Dream  ...  female  2009.0         test
+<pre><code>   rowid species     island  ...     sex    year  test_column
+0    1.0  Adelie  Torgersen  ...    male  2007.0         test
+1    2.0  Adelie  Torgersen  ...  female  2007.0         test
+2    3.0  Adelie  Torgersen  ...  female  2007.0         test
+3    4.0  Adelie  Torgersen  ...    None  2007.0         test
+4    5.0  Adelie  Torgersen  ...  female  2007.0         test
+5    6.0  Adelie  Torgersen  ...    male  2007.0         test
+6    7.0  Adelie  Torgersen  ...  female  2007.0         test
+7    8.0  Adelie  Torgersen  ...    male  2007.0         test
+8    9.0  Adelie  Torgersen  ...    None  2007.0         test
+9   10.0  Adelie  Torgersen  ...    None  2007.0         test
 
-[344 rows x 10 columns]</code></pre>
+[10 rows x 10 columns]</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>r_penguins <span class="ot">=</span> <span class="fu">py_to_r</span>(py_penguins)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>r_penguins</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>r_penguins <span class="ot">=</span> <span class="fu">py_to_r</span>(py_penguins)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>r_penguins</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    rowid   species    island bill_length_mm bill_depth_mm flipper_length_mm
-1       1    Adelie Torgersen           39.1          18.7               181
-2       2    Adelie Torgersen           39.5          17.4               186
-3       3    Adelie Torgersen           40.3          18.0               195
-4       4    Adelie Torgersen             NA            NA                NA
-5       5    Adelie Torgersen           36.7          19.3               193
-6       6    Adelie Torgersen           39.3          20.6               190
-7       7    Adelie Torgersen           38.9          17.8               181
-8       8    Adelie Torgersen           39.2          19.6               195
-9       9    Adelie Torgersen           34.1          18.1               193
-10     10    Adelie Torgersen           42.0          20.2               190
-11     11    Adelie Torgersen           37.8          17.1               186
-12     12    Adelie Torgersen           37.8          17.3               180
-13     13    Adelie Torgersen           41.1          17.6               182
-14     14    Adelie Torgersen           38.6          21.2               191
-15     15    Adelie Torgersen           34.6          21.1               198
-16     16    Adelie Torgersen           36.6          17.8               185
-17     17    Adelie Torgersen           38.7          19.0               195
-18     18    Adelie Torgersen           42.5          20.7               197
-19     19    Adelie Torgersen           34.4          18.4               184
-20     20    Adelie Torgersen           46.0          21.5               194
-21     21    Adelie    Biscoe           37.8          18.3               174
-22     22    Adelie    Biscoe           37.7          18.7               180
-23     23    Adelie    Biscoe           35.9          19.2               189
-24     24    Adelie    Biscoe           38.2          18.1               185
-25     25    Adelie    Biscoe           38.8          17.2               180
-26     26    Adelie    Biscoe           35.3          18.9               187
-27     27    Adelie    Biscoe           40.6          18.6               183
-28     28    Adelie    Biscoe           40.5          17.9               187
-29     29    Adelie    Biscoe           37.9          18.6               172
-30     30    Adelie    Biscoe           40.5          18.9               180
-31     31    Adelie     Dream           39.5          16.7               178
-32     32    Adelie     Dream           37.2          18.1               178
-33     33    Adelie     Dream           39.5          17.8               188
-34     34    Adelie     Dream           40.9          18.9               184
-35     35    Adelie     Dream           36.4          17.0               195
-36     36    Adelie     Dream           39.2          21.1               196
-37     37    Adelie     Dream           38.8          20.0               190
-38     38    Adelie     Dream           42.2          18.5               180
-39     39    Adelie     Dream           37.6          19.3               181
-40     40    Adelie     Dream           39.8          19.1               184
-41     41    Adelie     Dream           36.5          18.0               182
-42     42    Adelie     Dream           40.8          18.4               195
-43     43    Adelie     Dream           36.0          18.5               186
-44     44    Adelie     Dream           44.1          19.7               196
-45     45    Adelie     Dream           37.0          16.9               185
-46     46    Adelie     Dream           39.6          18.8               190
-47     47    Adelie     Dream           41.1          19.0               182
-48     48    Adelie     Dream           37.5          18.9               179
-49     49    Adelie     Dream           36.0          17.9               190
-50     50    Adelie     Dream           42.3          21.2               191
-51     51    Adelie    Biscoe           39.6          17.7               186
-52     52    Adelie    Biscoe           40.1          18.9               188
-53     53    Adelie    Biscoe           35.0          17.9               190
-54     54    Adelie    Biscoe           42.0          19.5               200
-55     55    Adelie    Biscoe           34.5          18.1               187
-56     56    Adelie    Biscoe           41.4          18.6               191
-57     57    Adelie    Biscoe           39.0          17.5               186
-58     58    Adelie    Biscoe           40.6          18.8               193
-59     59    Adelie    Biscoe           36.5          16.6               181
-60     60    Adelie    Biscoe           37.6          19.1               194
-61     61    Adelie    Biscoe           35.7          16.9               185
-62     62    Adelie    Biscoe           41.3          21.1               195
-63     63    Adelie    Biscoe           37.6          17.0               185
-64     64    Adelie    Biscoe           41.1          18.2               192
-65     65    Adelie    Biscoe           36.4          17.1               184
-66     66    Adelie    Biscoe           41.6          18.0               192
-67     67    Adelie    Biscoe           35.5          16.2               195
-68     68    Adelie    Biscoe           41.1          19.1               188
-69     69    Adelie Torgersen           35.9          16.6               190
-70     70    Adelie Torgersen           41.8          19.4               198
-71     71    Adelie Torgersen           33.5          19.0               190
-72     72    Adelie Torgersen           39.7          18.4               190
-73     73    Adelie Torgersen           39.6          17.2               196
-74     74    Adelie Torgersen           45.8          18.9               197
-75     75    Adelie Torgersen           35.5          17.5               190
-76     76    Adelie Torgersen           42.8          18.5               195
-77     77    Adelie Torgersen           40.9          16.8               191
-78     78    Adelie Torgersen           37.2          19.4               184
-79     79    Adelie Torgersen           36.2          16.1               187
-80     80    Adelie Torgersen           42.1          19.1               195
-81     81    Adelie Torgersen           34.6          17.2               189
-82     82    Adelie Torgersen           42.9          17.6               196
-83     83    Adelie Torgersen           36.7          18.8               187
-84     84    Adelie Torgersen           35.1          19.4               193
-85     85    Adelie     Dream           37.3          17.8               191
-86     86    Adelie     Dream           41.3          20.3               194
-87     87    Adelie     Dream           36.3          19.5               190
-88     88    Adelie     Dream           36.9          18.6               189
-89     89    Adelie     Dream           38.3          19.2               189
-90     90    Adelie     Dream           38.9          18.8               190
-91     91    Adelie     Dream           35.7          18.0               202
-92     92    Adelie     Dream           41.1          18.1               205
-93     93    Adelie     Dream           34.0          17.1               185
-94     94    Adelie     Dream           39.6          18.1               186
-95     95    Adelie     Dream           36.2          17.3               187
-96     96    Adelie     Dream           40.8          18.9               208
-97     97    Adelie     Dream           38.1          18.6               190
-98     98    Adelie     Dream           40.3          18.5               196
-99     99    Adelie     Dream           33.1          16.1               178
-100   100    Adelie     Dream           43.2          18.5               192
-101   101    Adelie    Biscoe           35.0          17.9               192
-102   102    Adelie    Biscoe           41.0          20.0               203
-103   103    Adelie    Biscoe           37.7          16.0               183
-104   104    Adelie    Biscoe           37.8          20.0               190
-105   105    Adelie    Biscoe           37.9          18.6               193
-106   106    Adelie    Biscoe           39.7          18.9               184
-107   107    Adelie    Biscoe           38.6          17.2               199
-108   108    Adelie    Biscoe           38.2          20.0               190
-109   109    Adelie    Biscoe           38.1          17.0               181
-110   110    Adelie    Biscoe           43.2          19.0               197
-111   111    Adelie    Biscoe           38.1          16.5               198
-112   112    Adelie    Biscoe           45.6          20.3               191
-113   113    Adelie    Biscoe           39.7          17.7               193
-114   114    Adelie    Biscoe           42.2          19.5               197
-115   115    Adelie    Biscoe           39.6          20.7               191
-116   116    Adelie    Biscoe           42.7          18.3               196
-117   117    Adelie Torgersen           38.6          17.0               188
-118   118    Adelie Torgersen           37.3          20.5               199
-119   119    Adelie Torgersen           35.7          17.0               189
-120   120    Adelie Torgersen           41.1          18.6               189
-121   121    Adelie Torgersen           36.2          17.2               187
-122   122    Adelie Torgersen           37.7          19.8               198
-123   123    Adelie Torgersen           40.2          17.0               176
-124   124    Adelie Torgersen           41.4          18.5               202
-125   125    Adelie Torgersen           35.2          15.9               186
-126   126    Adelie Torgersen           40.6          19.0               199
-127   127    Adelie Torgersen           38.8          17.6               191
-128   128    Adelie Torgersen           41.5          18.3               195
-129   129    Adelie Torgersen           39.0          17.1               191
-130   130    Adelie Torgersen           44.1          18.0               210
-131   131    Adelie Torgersen           38.5          17.9               190
-132   132    Adelie Torgersen           43.1          19.2               197
-133   133    Adelie     Dream           36.8          18.5               193
-134   134    Adelie     Dream           37.5          18.5               199
-135   135    Adelie     Dream           38.1          17.6               187
-136   136    Adelie     Dream           41.1          17.5               190
-137   137    Adelie     Dream           35.6          17.5               191
-138   138    Adelie     Dream           40.2          20.1               200
-139   139    Adelie     Dream           37.0          16.5               185
-140   140    Adelie     Dream           39.7          17.9               193
-141   141    Adelie     Dream           40.2          17.1               193
-142   142    Adelie     Dream           40.6          17.2               187
-143   143    Adelie     Dream           32.1          15.5               188
-144   144    Adelie     Dream           40.7          17.0               190
-145   145    Adelie     Dream           37.3          16.8               192
-146   146    Adelie     Dream           39.0          18.7               185
-147   147    Adelie     Dream           39.2          18.6               190
-148   148    Adelie     Dream           36.6          18.4               184
-149   149    Adelie     Dream           36.0          17.8               195
-150   150    Adelie     Dream           37.8          18.1               193
-151   151    Adelie     Dream           36.0          17.1               187
-152   152    Adelie     Dream           41.5          18.5               201
-153   153    Gentoo    Biscoe           46.1          13.2               211
-154   154    Gentoo    Biscoe           50.0          16.3               230
-155   155    Gentoo    Biscoe           48.7          14.1               210
-156   156    Gentoo    Biscoe           50.0          15.2               218
-157   157    Gentoo    Biscoe           47.6          14.5               215
-158   158    Gentoo    Biscoe           46.5          13.5               210
-159   159    Gentoo    Biscoe           45.4          14.6               211
-160   160    Gentoo    Biscoe           46.7          15.3               219
-161   161    Gentoo    Biscoe           43.3          13.4               209
-162   162    Gentoo    Biscoe           46.8          15.4               215
-163   163    Gentoo    Biscoe           40.9          13.7               214
-164   164    Gentoo    Biscoe           49.0          16.1               216
-165   165    Gentoo    Biscoe           45.5          13.7               214
-166   166    Gentoo    Biscoe           48.4          14.6               213
-167   167    Gentoo    Biscoe           45.8          14.6               210
-168   168    Gentoo    Biscoe           49.3          15.7               217
-169   169    Gentoo    Biscoe           42.0          13.5               210
-170   170    Gentoo    Biscoe           49.2          15.2               221
-171   171    Gentoo    Biscoe           46.2          14.5               209
-172   172    Gentoo    Biscoe           48.7          15.1               222
-173   173    Gentoo    Biscoe           50.2          14.3               218
-174   174    Gentoo    Biscoe           45.1          14.5               215
-175   175    Gentoo    Biscoe           46.5          14.5               213
-176   176    Gentoo    Biscoe           46.3          15.8               215
-177   177    Gentoo    Biscoe           42.9          13.1               215
-178   178    Gentoo    Biscoe           46.1          15.1               215
-179   179    Gentoo    Biscoe           44.5          14.3               216
-180   180    Gentoo    Biscoe           47.8          15.0               215
-181   181    Gentoo    Biscoe           48.2          14.3               210
-182   182    Gentoo    Biscoe           50.0          15.3               220
-183   183    Gentoo    Biscoe           47.3          15.3               222
-184   184    Gentoo    Biscoe           42.8          14.2               209
-185   185    Gentoo    Biscoe           45.1          14.5               207
-186   186    Gentoo    Biscoe           59.6          17.0               230
-187   187    Gentoo    Biscoe           49.1          14.8               220
-188   188    Gentoo    Biscoe           48.4          16.3               220
-189   189    Gentoo    Biscoe           42.6          13.7               213
-190   190    Gentoo    Biscoe           44.4          17.3               219
-191   191    Gentoo    Biscoe           44.0          13.6               208
-192   192    Gentoo    Biscoe           48.7          15.7               208
-193   193    Gentoo    Biscoe           42.7          13.7               208
-194   194    Gentoo    Biscoe           49.6          16.0               225
-195   195    Gentoo    Biscoe           45.3          13.7               210
-196   196    Gentoo    Biscoe           49.6          15.0               216
-197   197    Gentoo    Biscoe           50.5          15.9               222
-198   198    Gentoo    Biscoe           43.6          13.9               217
-199   199    Gentoo    Biscoe           45.5          13.9               210
-200   200    Gentoo    Biscoe           50.5          15.9               225
-201   201    Gentoo    Biscoe           44.9          13.3               213
-202   202    Gentoo    Biscoe           45.2          15.8               215
-203   203    Gentoo    Biscoe           46.6          14.2               210
-204   204    Gentoo    Biscoe           48.5          14.1               220
-205   205    Gentoo    Biscoe           45.1          14.4               210
-206   206    Gentoo    Biscoe           50.1          15.0               225
-207   207    Gentoo    Biscoe           46.5          14.4               217
-208   208    Gentoo    Biscoe           45.0          15.4               220
-209   209    Gentoo    Biscoe           43.8          13.9               208
-210   210    Gentoo    Biscoe           45.5          15.0               220
-211   211    Gentoo    Biscoe           43.2          14.5               208
-212   212    Gentoo    Biscoe           50.4          15.3               224
-213   213    Gentoo    Biscoe           45.3          13.8               208
-214   214    Gentoo    Biscoe           46.2          14.9               221
-215   215    Gentoo    Biscoe           45.7          13.9               214
-216   216    Gentoo    Biscoe           54.3          15.7               231
-217   217    Gentoo    Biscoe           45.8          14.2               219
-218   218    Gentoo    Biscoe           49.8          16.8               230
-219   219    Gentoo    Biscoe           46.2          14.4               214
-220   220    Gentoo    Biscoe           49.5          16.2               229
-221   221    Gentoo    Biscoe           43.5          14.2               220
-222   222    Gentoo    Biscoe           50.7          15.0               223
-223   223    Gentoo    Biscoe           47.7          15.0               216
-224   224    Gentoo    Biscoe           46.4          15.6               221
-225   225    Gentoo    Biscoe           48.2          15.6               221
-226   226    Gentoo    Biscoe           46.5          14.8               217
-227   227    Gentoo    Biscoe           46.4          15.0               216
-228   228    Gentoo    Biscoe           48.6          16.0               230
-229   229    Gentoo    Biscoe           47.5          14.2               209
-230   230    Gentoo    Biscoe           51.1          16.3               220
-231   231    Gentoo    Biscoe           45.2          13.8               215
-232   232    Gentoo    Biscoe           45.2          16.4               223
-233   233    Gentoo    Biscoe           49.1          14.5               212
-234   234    Gentoo    Biscoe           52.5          15.6               221
-235   235    Gentoo    Biscoe           47.4          14.6               212
-236   236    Gentoo    Biscoe           50.0          15.9               224
-237   237    Gentoo    Biscoe           44.9          13.8               212
-238   238    Gentoo    Biscoe           50.8          17.3               228
-239   239    Gentoo    Biscoe           43.4          14.4               218
-240   240    Gentoo    Biscoe           51.3          14.2               218
-241   241    Gentoo    Biscoe           47.5          14.0               212
-242   242    Gentoo    Biscoe           52.1          17.0               230
-243   243    Gentoo    Biscoe           47.5          15.0               218
-244   244    Gentoo    Biscoe           52.2          17.1               228
-245   245    Gentoo    Biscoe           45.5          14.5               212
-246   246    Gentoo    Biscoe           49.5          16.1               224
-247   247    Gentoo    Biscoe           44.5          14.7               214
-248   248    Gentoo    Biscoe           50.8          15.7               226
-249   249    Gentoo    Biscoe           49.4          15.8               216
-250   250    Gentoo    Biscoe           46.9          14.6               222
-251   251    Gentoo    Biscoe           48.4          14.4               203
-252   252    Gentoo    Biscoe           51.1          16.5               225
-253   253    Gentoo    Biscoe           48.5          15.0               219
-254   254    Gentoo    Biscoe           55.9          17.0               228
-255   255    Gentoo    Biscoe           47.2          15.5               215
-256   256    Gentoo    Biscoe           49.1          15.0               228
-257   257    Gentoo    Biscoe           47.3          13.8               216
-258   258    Gentoo    Biscoe           46.8          16.1               215
-259   259    Gentoo    Biscoe           41.7          14.7               210
-260   260    Gentoo    Biscoe           53.4          15.8               219
-261   261    Gentoo    Biscoe           43.3          14.0               208
-262   262    Gentoo    Biscoe           48.1          15.1               209
-263   263    Gentoo    Biscoe           50.5          15.2               216
-264   264    Gentoo    Biscoe           49.8          15.9               229
-265   265    Gentoo    Biscoe           43.5          15.2               213
-266   266    Gentoo    Biscoe           51.5          16.3               230
-267   267    Gentoo    Biscoe           46.2          14.1               217
-268   268    Gentoo    Biscoe           55.1          16.0               230
-269   269    Gentoo    Biscoe           44.5          15.7               217
-270   270    Gentoo    Biscoe           48.8          16.2               222
-271   271    Gentoo    Biscoe           47.2          13.7               214
-272   272    Gentoo    Biscoe             NA            NA                NA
-273   273    Gentoo    Biscoe           46.8          14.3               215
-274   274    Gentoo    Biscoe           50.4          15.7               222
-275   275    Gentoo    Biscoe           45.2          14.8               212
-276   276    Gentoo    Biscoe           49.9          16.1               213
-277   277 Chinstrap     Dream           46.5          17.9               192
-278   278 Chinstrap     Dream           50.0          19.5               196
-279   279 Chinstrap     Dream           51.3          19.2               193
-280   280 Chinstrap     Dream           45.4          18.7               188
-281   281 Chinstrap     Dream           52.7          19.8               197
-282   282 Chinstrap     Dream           45.2          17.8               198
-283   283 Chinstrap     Dream           46.1          18.2               178
-284   284 Chinstrap     Dream           51.3          18.2               197
-285   285 Chinstrap     Dream           46.0          18.9               195
-286   286 Chinstrap     Dream           51.3          19.9               198
-287   287 Chinstrap     Dream           46.6          17.8               193
-288   288 Chinstrap     Dream           51.7          20.3               194
-289   289 Chinstrap     Dream           47.0          17.3               185
-290   290 Chinstrap     Dream           52.0          18.1               201
-291   291 Chinstrap     Dream           45.9          17.1               190
-292   292 Chinstrap     Dream           50.5          19.6               201
-293   293 Chinstrap     Dream           50.3          20.0               197
-294   294 Chinstrap     Dream           58.0          17.8               181
-295   295 Chinstrap     Dream           46.4          18.6               190
-296   296 Chinstrap     Dream           49.2          18.2               195
-297   297 Chinstrap     Dream           42.4          17.3               181
-298   298 Chinstrap     Dream           48.5          17.5               191
-299   299 Chinstrap     Dream           43.2          16.6               187
-300   300 Chinstrap     Dream           50.6          19.4               193
-301   301 Chinstrap     Dream           46.7          17.9               195
-302   302 Chinstrap     Dream           52.0          19.0               197
-303   303 Chinstrap     Dream           50.5          18.4               200
-304   304 Chinstrap     Dream           49.5          19.0               200
-305   305 Chinstrap     Dream           46.4          17.8               191
-306   306 Chinstrap     Dream           52.8          20.0               205
-307   307 Chinstrap     Dream           40.9          16.6               187
-308   308 Chinstrap     Dream           54.2          20.8               201
-309   309 Chinstrap     Dream           42.5          16.7               187
-310   310 Chinstrap     Dream           51.0          18.8               203
-311   311 Chinstrap     Dream           49.7          18.6               195
-312   312 Chinstrap     Dream           47.5          16.8               199
-313   313 Chinstrap     Dream           47.6          18.3               195
-314   314 Chinstrap     Dream           52.0          20.7               210
-315   315 Chinstrap     Dream           46.9          16.6               192
-316   316 Chinstrap     Dream           53.5          19.9               205
-317   317 Chinstrap     Dream           49.0          19.5               210
-318   318 Chinstrap     Dream           46.2          17.5               187
-319   319 Chinstrap     Dream           50.9          19.1               196
-320   320 Chinstrap     Dream           45.5          17.0               196
-321   321 Chinstrap     Dream           50.9          17.9               196
-322   322 Chinstrap     Dream           50.8          18.5               201
-323   323 Chinstrap     Dream           50.1          17.9               190
-324   324 Chinstrap     Dream           49.0          19.6               212
-325   325 Chinstrap     Dream           51.5          18.7               187
-326   326 Chinstrap     Dream           49.8          17.3               198
-327   327 Chinstrap     Dream           48.1          16.4               199
-328   328 Chinstrap     Dream           51.4          19.0               201
-329   329 Chinstrap     Dream           45.7          17.3               193
-330   330 Chinstrap     Dream           50.7          19.7               203
-331   331 Chinstrap     Dream           42.5          17.3               187
-332   332 Chinstrap     Dream           52.2          18.8               197
-333   333 Chinstrap     Dream           45.2          16.6               191
-334   334 Chinstrap     Dream           49.3          19.9               203
-335   335 Chinstrap     Dream           50.2          18.8               202
-336   336 Chinstrap     Dream           45.6          19.4               194
-337   337 Chinstrap     Dream           51.9          19.5               206
-338   338 Chinstrap     Dream           46.8          16.5               189
-339   339 Chinstrap     Dream           45.7          17.0               195
-340   340 Chinstrap     Dream           55.8          19.8               207
-341   341 Chinstrap     Dream           43.5          18.1               202
-342   342 Chinstrap     Dream           49.6          18.2               193
-343   343 Chinstrap     Dream           50.8          19.0               210
-344   344 Chinstrap     Dream           50.2          18.7               198
-    body_mass_g    sex year test_column
-1          3750   male 2007        test
-2          3800 female 2007        test
-3          3250 female 2007        test
-4            NA   &lt;NA&gt; 2007        test
-5          3450 female 2007        test
-6          3650   male 2007        test
-7          3625 female 2007        test
-8          4675   male 2007        test
-9          3475   &lt;NA&gt; 2007        test
-10         4250   &lt;NA&gt; 2007        test
-11         3300   &lt;NA&gt; 2007        test
-12         3700   &lt;NA&gt; 2007        test
-13         3200 female 2007        test
-14         3800   male 2007        test
-15         4400   male 2007        test
-16         3700 female 2007        test
-17         3450 female 2007        test
-18         4500   male 2007        test
-19         3325 female 2007        test
-20         4200   male 2007        test
-21         3400 female 2007        test
-22         3600   male 2007        test
-23         3800 female 2007        test
-24         3950   male 2007        test
-25         3800   male 2007        test
-26         3800 female 2007        test
-27         3550   male 2007        test
-28         3200 female 2007        test
-29         3150 female 2007        test
-30         3950   male 2007        test
-31         3250 female 2007        test
-32         3900   male 2007        test
-33         3300 female 2007        test
-34         3900   male 2007        test
-35         3325 female 2007        test
-36         4150   male 2007        test
-37         3950   male 2007        test
-38         3550 female 2007        test
-39         3300 female 2007        test
-40         4650   male 2007        test
-41         3150 female 2007        test
-42         3900   male 2007        test
-43         3100 female 2007        test
-44         4400   male 2007        test
-45         3000 female 2007        test
-46         4600   male 2007        test
-47         3425   male 2007        test
-48         2975   &lt;NA&gt; 2007        test
-49         3450 female 2007        test
-50         4150   male 2007        test
-51         3500 female 2008        test
-52         4300   male 2008        test
-53         3450 female 2008        test
-54         4050   male 2008        test
-55         2900 female 2008        test
-56         3700   male 2008        test
-57         3550 female 2008        test
-58         3800   male 2008        test
-59         2850 female 2008        test
-60         3750   male 2008        test
-61         3150 female 2008        test
-62         4400   male 2008        test
-63         3600 female 2008        test
-64         4050   male 2008        test
-65         2850 female 2008        test
-66         3950   male 2008        test
-67         3350 female 2008        test
-68         4100   male 2008        test
-69         3050 female 2008        test
-70         4450   male 2008        test
-71         3600 female 2008        test
-72         3900   male 2008        test
-73         3550 female 2008        test
-74         4150   male 2008        test
-75         3700 female 2008        test
-76         4250   male 2008        test
-77         3700 female 2008        test
-78         3900   male 2008        test
-79         3550 female 2008        test
-80         4000   male 2008        test
-81         3200 female 2008        test
-82         4700   male 2008        test
-83         3800 female 2008        test
-84         4200   male 2008        test
-85         3350 female 2008        test
-86         3550   male 2008        test
-87         3800   male 2008        test
-88         3500 female 2008        test
-89         3950   male 2008        test
-90         3600 female 2008        test
-91         3550 female 2008        test
-92         4300   male 2008        test
-93         3400 female 2008        test
-94         4450   male 2008        test
-95         3300 female 2008        test
-96         4300   male 2008        test
-97         3700 female 2008        test
-98         4350   male 2008        test
-99         2900 female 2008        test
-100        4100   male 2008        test
-101        3725 female 2009        test
-102        4725   male 2009        test
-103        3075 female 2009        test
-104        4250   male 2009        test
-105        2925 female 2009        test
-106        3550   male 2009        test
-107        3750 female 2009        test
-108        3900   male 2009        test
-109        3175 female 2009        test
-110        4775   male 2009        test
-111        3825 female 2009        test
-112        4600   male 2009        test
-113        3200 female 2009        test
-114        4275   male 2009        test
-115        3900 female 2009        test
-116        4075   male 2009        test
-117        2900 female 2009        test
-118        3775   male 2009        test
-119        3350 female 2009        test
-120        3325   male 2009        test
-121        3150 female 2009        test
-122        3500   male 2009        test
-123        3450 female 2009        test
-124        3875   male 2009        test
-125        3050 female 2009        test
-126        4000   male 2009        test
-127        3275 female 2009        test
-128        4300   male 2009        test
-129        3050 female 2009        test
-130        4000   male 2009        test
-131        3325 female 2009        test
-132        3500   male 2009        test
-133        3500 female 2009        test
-134        4475   male 2009        test
-135        3425 female 2009        test
-136        3900   male 2009        test
-137        3175 female 2009        test
-138        3975   male 2009        test
-139        3400 female 2009        test
-140        4250   male 2009        test
-141        3400 female 2009        test
-142        3475   male 2009        test
-143        3050 female 2009        test
-144        3725   male 2009        test
-145        3000 female 2009        test
-146        3650   male 2009        test
-147        4250   male 2009        test
-148        3475 female 2009        test
-149        3450 female 2009        test
-150        3750   male 2009        test
-151        3700 female 2009        test
-152        4000   male 2009        test
-153        4500 female 2007        test
-154        5700   male 2007        test
-155        4450 female 2007        test
-156        5700   male 2007        test
-157        5400   male 2007        test
-158        4550 female 2007        test
-159        4800 female 2007        test
-160        5200   male 2007        test
-161        4400 female 2007        test
-162        5150   male 2007        test
-163        4650 female 2007        test
-164        5550   male 2007        test
-165        4650 female 2007        test
-166        5850   male 2007        test
-167        4200 female 2007        test
-168        5850   male 2007        test
-169        4150 female 2007        test
-170        6300   male 2007        test
-171        4800 female 2007        test
-172        5350   male 2007        test
-173        5700   male 2007        test
-174        5000 female 2007        test
-175        4400 female 2007        test
-176        5050   male 2007        test
-177        5000 female 2007        test
-178        5100   male 2007        test
-179        4100   &lt;NA&gt; 2007        test
-180        5650   male 2007        test
-181        4600 female 2007        test
-182        5550   male 2007        test
-183        5250   male 2007        test
-184        4700 female 2007        test
-185        5050 female 2007        test
-186        6050   male 2007        test
-187        5150 female 2008        test
-188        5400   male 2008        test
-189        4950 female 2008        test
-190        5250   male 2008        test
-191        4350 female 2008        test
-192        5350   male 2008        test
-193        3950 female 2008        test
-194        5700   male 2008        test
-195        4300 female 2008        test
-196        4750   male 2008        test
-197        5550   male 2008        test
-198        4900 female 2008        test
-199        4200 female 2008        test
-200        5400   male 2008        test
-201        5100 female 2008        test
-202        5300   male 2008        test
-203        4850 female 2008        test
-204        5300   male 2008        test
-205        4400 female 2008        test
-206        5000   male 2008        test
-207        4900 female 2008        test
-208        5050   male 2008        test
-209        4300 female 2008        test
-210        5000   male 2008        test
-211        4450 female 2008        test
-212        5550   male 2008        test
-213        4200 female 2008        test
-214        5300   male 2008        test
-215        4400 female 2008        test
-216        5650   male 2008        test
-217        4700 female 2008        test
-218        5700   male 2008        test
-219        4650   &lt;NA&gt; 2008        test
-220        5800   male 2008        test
-221        4700 female 2008        test
-222        5550   male 2008        test
-223        4750 female 2008        test
-224        5000   male 2008        test
-225        5100   male 2008        test
-226        5200 female 2008        test
-227        4700 female 2008        test
-228        5800   male 2008        test
-229        4600 female 2008        test
-230        6000   male 2008        test
-231        4750 female 2008        test
-232        5950   male 2008        test
-233        4625 female 2009        test
-234        5450   male 2009        test
-235        4725 female 2009        test
-236        5350   male 2009        test
-237        4750 female 2009        test
-238        5600   male 2009        test
-239        4600 female 2009        test
-240        5300   male 2009        test
-241        4875 female 2009        test
-242        5550   male 2009        test
-243        4950 female 2009        test
-244        5400   male 2009        test
-245        4750 female 2009        test
-246        5650   male 2009        test
-247        4850 female 2009        test
-248        5200   male 2009        test
-249        4925   male 2009        test
-250        4875 female 2009        test
-251        4625 female 2009        test
-252        5250   male 2009        test
-253        4850 female 2009        test
-254        5600   male 2009        test
-255        4975 female 2009        test
-256        5500   male 2009        test
-257        4725   &lt;NA&gt; 2009        test
-258        5500   male 2009        test
-259        4700 female 2009        test
-260        5500   male 2009        test
-261        4575 female 2009        test
-262        5500   male 2009        test
-263        5000 female 2009        test
-264        5950   male 2009        test
-265        4650 female 2009        test
-266        5500   male 2009        test
-267        4375 female 2009        test
-268        5850   male 2009        test
-269        4875   &lt;NA&gt; 2009        test
-270        6000   male 2009        test
-271        4925 female 2009        test
-272          NA   &lt;NA&gt; 2009        test
-273        4850 female 2009        test
-274        5750   male 2009        test
-275        5200 female 2009        test
-276        5400   male 2009        test
-277        3500 female 2007        test
-278        3900   male 2007        test
-279        3650   male 2007        test
-280        3525 female 2007        test
-281        3725   male 2007        test
-282        3950 female 2007        test
-283        3250 female 2007        test
-284        3750   male 2007        test
-285        4150 female 2007        test
-286        3700   male 2007        test
-287        3800 female 2007        test
-288        3775   male 2007        test
-289        3700 female 2007        test
-290        4050   male 2007        test
-291        3575 female 2007        test
-292        4050   male 2007        test
-293        3300   male 2007        test
-294        3700 female 2007        test
-295        3450 female 2007        test
-296        4400   male 2007        test
-297        3600 female 2007        test
-298        3400   male 2007        test
-299        2900 female 2007        test
-300        3800   male 2007        test
-301        3300 female 2007        test
-302        4150   male 2007        test
-303        3400 female 2008        test
-304        3800   male 2008        test
-305        3700 female 2008        test
-306        4550   male 2008        test
-307        3200 female 2008        test
-308        4300   male 2008        test
-309        3350 female 2008        test
-310        4100   male 2008        test
-311        3600   male 2008        test
-312        3900 female 2008        test
-313        3850 female 2008        test
-314        4800   male 2008        test
-315        2700 female 2008        test
-316        4500   male 2008        test
-317        3950   male 2008        test
-318        3650 female 2008        test
-319        3550   male 2008        test
-320        3500 female 2008        test
-321        3675 female 2009        test
-322        4450   male 2009        test
-323        3400 female 2009        test
-324        4300   male 2009        test
-325        3250   male 2009        test
-326        3675 female 2009        test
-327        3325 female 2009        test
-328        3950   male 2009        test
-329        3600 female 2009        test
-330        4050   male 2009        test
-331        3350 female 2009        test
-332        3450   male 2009        test
-333        3250 female 2009        test
-334        4050   male 2009        test
-335        3800   male 2009        test
-336        3525 female 2009        test
-337        3950   male 2009        test
-338        3650 female 2009        test
-339        3650 female 2009        test
-340        4000   male 2009        test
-341        3400 female 2009        test
-342        3775   male 2009        test
-343        4100   male 2009        test
-344        3775 female 2009        test</code></pre>
+<pre><code>   rowid species    island bill_length_mm bill_depth_mm flipper_length_mm
+1      1  Adelie Torgersen           39.1          18.7               181
+2      2  Adelie Torgersen           39.5          17.4               186
+3      3  Adelie Torgersen           40.3          18.0               195
+4      4  Adelie Torgersen             NA            NA                NA
+5      5  Adelie Torgersen           36.7          19.3               193
+6      6  Adelie Torgersen           39.3          20.6               190
+7      7  Adelie Torgersen           38.9          17.8               181
+8      8  Adelie Torgersen           39.2          19.6               195
+9      9  Adelie Torgersen           34.1          18.1               193
+10    10  Adelie Torgersen           42.0          20.2               190
+   body_mass_g    sex year test_column
+1         3750   male 2007        test
+2         3800 female 2007        test
+3         3250 female 2007        test
+4           NA   &lt;NA&gt; 2007        test
+5         3450 female 2007        test
+6         3650   male 2007        test
+7         3625 female 2007        test
+8         4675   male 2007        test
+9         3475   &lt;NA&gt; 2007        test
+10        4250   &lt;NA&gt; 2007        test</code></pre>
 </div>
 </div>
 </section>

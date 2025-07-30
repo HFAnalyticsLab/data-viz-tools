@@ -5,10 +5,13 @@ format:
     code-fold: false
     self-contained: true
     theme: cosmo
+execute:
+  eval: true
+  warning: false
 engine: knitr
 ---
 
-Combining R and Python code. Here via R using Knitr engine + reticulate library. 
+Combining R and Python code. Here via R using Knitr engine + reticulate library.
 
 ## Setup
 
@@ -25,7 +28,7 @@ use_condaenv("310_data_viz")
 
 ```{r}
 #R code
-penguins <- read_csv("penguins.csv")
+penguins <- read_csv("penguins_short.csv")
 ```
 
 ## Convert data to pandas dataframe
