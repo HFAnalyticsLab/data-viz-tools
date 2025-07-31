@@ -2,9 +2,8 @@
 title: "R and Python love story in Quarto"
 format:
   html:
-    code-fold: false
+    code-fold: true
     self-contained: true
-    theme: cosmo
 execute:
   eval: true
   warning: false
@@ -17,9 +16,7 @@ Combining R and Python code. Here via R using Knitr engine + reticulate library.
 
 ```{r}
 #library(reticulate)
-#reticulate::conda_list()
-
-#use_python("C:/Users/Lisa.Hornung/AppData/Local/miniconda3/envs/310_data_viz/")
+#reticulate::conda_list() #to print conda environments
 #use_condaenv("310_data_viz")
 ```
 
@@ -33,7 +30,6 @@ Combining R and Python code. Here via R using Knitr engine + reticulate library.
 #convert to dataframe for python
 #py_penguins <- r_to_py(penguins)
 ```
-
 
 ## Add column in python
 
