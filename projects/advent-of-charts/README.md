@@ -33,4 +33,4 @@ Feel free to share your creations in the Data Visualisation Teams channel if you
 | 16  | Heatmap   |  |  |  |   |
 | 17  | Treemap  |  |  |  |   |
 | 18  | Table   |  |  |  |   |
-| 19  | Donut    |  |  |  |   |
+| 19  | ??    |  |  |  |   |
